@@ -33,7 +33,7 @@ public class Conversor {
         this.base_code = base_code;
     }
 
-    public double conversaoEmMoedaLocal(int valor) {
+    public double conversaoEmMoedaLocal(double valor) {
         return valor * conversion_rate;
     }
 }
