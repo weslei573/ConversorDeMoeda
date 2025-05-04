@@ -36,13 +36,4 @@ public class Conversor {
     public double conversaoEmMoedaLocal(double valor) {
         return valor * conversion_rate;
     }
-
-    @Override
-    public String toString() {
-        return "Conversor{" +
-                "base_code='" + base_code + '\'' +
-                ", target_code='" + target_code + '\'' +
-                ", conversion_rate=" + conversion_rate +
-                '}';
-    }
 }

@@ -20,7 +20,6 @@ public class ConsultaMoeda {
                     .send(request, HttpResponse.BodyHandlers.ofString());
 
             String json = response.body();
-            //System.out.println(json);
 
             return new Gson().fromJson(json, Conversor.class);
         } catch (Exception e) {

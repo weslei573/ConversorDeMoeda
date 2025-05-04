@@ -1,40 +1,41 @@
+import menu.Menu;
+import services.Validar;
+
 import java.util.Scanner;
 
 public class Principal {
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        Menu.exibirCabecalho();
+
         int operado;
-        String menuSair = """
-                (1) 
-                (0)
-                """;
-        String menu = """
-                *************************************************************************
-                SEJA BEM-VINDO/A AO CONVERSOR DE MOEDA
-                OFERECEMOS DADOS PARA A SEGUINTE LISTA MENOR DE CODIGO DE MOEDA:
-                
-                        AUD	ATS	BEF	BRL	CAD	CHF	CNY	DEM
-                        DKK	ESP	EUR	FIM	FRF	GBP	GRD	HKD
-                        IEP	INR	IRR	ITL	JPY	KRW	LKR	MXN
-                        MYR	NOK	NLG	NZD	PTE	SEK	SGD	THB
-                                TWD	USD	ZAR
-                *************************************************************************
-                """;
         do {
-            System.out.println(menu);
-            System.out.println("CONVERTE DE: ");
-            var base_case = scanner.nextLine();
-            System.out.println("PARA: ");
-            var target_code = scanner.nextLine();
-            System.out.println("VALOR: ");
-            double valor = scanner.nextInt();
+            Menu.exibirMenu();
+
+            String base_code = Validar.lerCodigoMoeda(scanner, "CONVERTE DE: ");
+            String target_code = Validar.lerCodigoMoeda(scanner, "PARA: ");
+            double valor = Validar.lerValor(scanner);
 
             ConsultaMoeda consultaMoeda = new ConsultaMoeda();
-            Conversor valorMoeda = consultaMoeda.buscaConversorMoeda(base_case, target_code);
-            System.out.println(valorMoeda.conversaoEmMoedaLocal(valor));
-            System.out.println("Para finaliza digite (1) para continuar (0)");
-            operado = scanner.nextInt();
-        } while (operado!=1);
-        System.out.println("Operação finalizada");
+            Conversor valorMoeda = consultaMoeda.buscaConversorMoeda(base_code, target_code);
+
+            System.out.printf(
+                    "Valor %.2f [%s] corresponde ao valor final de => %.2f [%s]%n",
+                    valor, base_code, valorMoeda.conversaoEmMoedaLocal(valor), target_code
+            );
+
+            operado = Validar.lerOpcaoContinuar(scanner);
+        } while (operado != 1);
+
+        encerrarPrograma(scanner);
     }
+
+    private static void encerrarPrograma(Scanner scanner) {
+        Menu.encerrarMensagemPrograma();
+        scanner.close();
+    }
+
 }
