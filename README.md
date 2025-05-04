@@ -21,11 +21,11 @@ link: ExchangeRate-API - Free https://www.exchangerate-api.com/.
   - Procure por "gson" na caixa de pesquisa.
   - Selecione a versão do Gson que deseja utilizar.
 
-- `Funcionalidade 3` `Filtrando as moedas`: Na oitava fase do nosso desafio, concentramo-nos no processo de filtrar as moedas utilizando a biblioteca Gson em Java.
+- `Funcionalidade 3` `Filtrando as moedas`: Concentramo-nos no processo de filtrar as moedas utilizando a biblioteca Gson em Java.
 Para acessar dados específicos, como os valores das diferentes moedas, é essencial entender como navegar pela estrutura JSON da resposta da API..
-- `Funcionalidade 4` `Convertendo os valores`: Na nona fase, finalmente realizaremos as conversões entre as moedas, agora que já temos os valores das taxas de câmbio em mãos.
+- `Funcionalidade 4` `Convertendo os valores`: Finalmente realizaremos as conversões entre as moedas, agora que já temos os valores das taxas de câmbio em mãos.
 Dessa forma, o próximo passo é implementar a lógica de conversão utilizando as taxas obtidas para calcular os valores convertidos entre as moedas desejadas.. 
-- `Funcionalidade 5` `Interagindo com o usuário`: Nesta etapa do desafio, vamos nos envolver na interação com o usuário, implementando uma interface textual por meio do console que apresenta opções de conversão de moedas.
+- `Funcionalidade 5` `Interagindo com o usuário`: Implementando uma interface textual por meio do console que apresenta opções de conversão de moedas.
 A estrutura incluirá um menu dentro de um loop de repetição, permitindo que o usuário selecione opções numéricas e forneça dados para a conversão, utilizando a classe Scanner para capturar a entrada do usuário.
 
 ## ✔️ Técnicas e tecnologias utilizadas
